@@ -397,7 +397,7 @@
         </div>
 
     </div>
-
+@section('scripts')
     <script>
 
         $('.il').instagramLite({
