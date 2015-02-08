@@ -1,0 +1,62 @@
+<div class="products-box">
+	<div class="img-box">
+		<img src="imgs/traditional.svg" alt="Generic placeholder image">
+	</div>
+	<div class="description-box">
+		<h2 class="top-spacer-small subtract-bottom">Traditional Plans</h2>
+		<p>This meal plan is inspired by the concept of well-balanced meals. This macronutrient ratio falls within ranges recommended in the US government's dietary guidelines for Americans.</p>
+	</div>
+	<div class="row">
+			<div class="col-lg-3 breakers">
+				<h3 class="top-spacer-small subtract-bottom">On The Go</h3>
+				<p class="header">2 meals a day</p>
+				<hr>
+				<ul>
+					<li ng-repeat="product in products | filter: { category: 'go', plan: 'traditional', days: '5' }">
+						<p>&nbsp;&nbsp;{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+					<li ng-repeat="product in products | filter: { category: 'go', plan: 'traditional', days: '6' }">
+						<p>&nbsp;&nbsp;{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+					<li ng-repeat="product in products | filter: { category: 'go', plan: 'traditional', days: '7' }">
+						<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+				</ul>
+			</div><!-- /.col-lg-4 -->
+		<div class="col-lg-3 breakers best-value">
+			<img class="bestvalue" src="imgs/bestvalue.svg" />
+
+			<h3 class="top-spacer-small subtract-bottom">Standard</h3>
+
+				<p class="header">3 meals a day</p>
+				<hr>
+				<ul>
+					<li ng-repeat="product in products | filter: { category: 'standard', plan: 'traditional' }">
+						<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+				</ul>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-3 breakers">
+				<h3 class="top-spacer-small subtract-bottom">Performance</h3>
+				<p class="header">4 meals a day</p>
+				<hr>
+				<ul>
+					<li ng-repeat="product in products | filter: { category: 'performance', plan: 'traditional' }">
+						<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+				</ul>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-3 breakers">
+				<h3 class="top-spacer-small subtract-bottom">Athlete</h3>
+				<p class="header">5 meals a day</p>
+				<hr>
+				<ul>
+					<li ng-repeat="product in products | filter: { category: 'athlete', plan: 'traditional' }">
+						<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+					</li>
+				</ul>
+			</div><!-- /.col-lg-4 -->
+	</div><!-- /.row -->
+
+
+</div>

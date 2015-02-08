@@ -1,0 +1,62 @@
+<div class="products-box">
+	<div class="img-box">
+		<img src="imgs/high-carb.svg" alt="Generic placeholder image">
+	</div>
+	<div class="description-box">
+		<h2 class="top-spacer-small subtract-bottom">High Carb Plans</h2>
+		<p>Carbohydrate is the main source of calories in this meal plan.  This macro-nutrient ratio, alongside appropriate caloric intake is used by many to increase daily energy levels and intensity of exercise regimens.  The healthiest way to maintain this diet is by incorporating foods rich in lean proteins and healthy fats to ensure intake of the required amount of daily amino and essential fatty acids.</p>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 breakers">
+			<h3 class="top-spacer-small subtract-bottom">On The Go</h3>
+			<p class="header">2 meals a day</p>
+			<hr>
+			<ul>
+				<li ng-repeat="product in products | filter: { category: 'go', plan: 'highcarb', days: '5' }">
+					<p>&nbsp;&nbsp;{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+				<li ng-repeat="product in products | filter: { category: 'go', plan: 'highcarb', days: '6' }">
+					<p>&nbsp;&nbsp;{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+				<li ng-repeat="product in products | filter: { category: 'go', plan: 'highcarb', days: '7' }">
+					<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+			</ul>
+		</div><!-- /.col-lg-4 -->
+		<div class="col-lg-3 breakers best-value">
+			<img class="bestvalue" src="imgs/bestvalue.svg" />
+
+			<h3 class="top-spacer-small subtract-bottom">Standard</h3>
+
+			<p class="header">3 meals a day</p>
+			<hr>
+			<ul>
+				<li ng-repeat="product in products | filter: { category: 'standard', plan: 'highcarb' }">
+					<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+			</ul>
+		</div><!-- /.col-lg-4 -->
+		<div class="col-lg-3 breakers">
+			<h3 class="top-spacer-small subtract-bottom">Performance</h3>
+			<p class="header">4 meals a day</p>
+			<hr>
+			<ul>
+				<li ng-repeat="product in products | filter: { category: 'performance', plan: 'highcarb' }">
+					<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+			</ul>
+		</div><!-- /.col-lg-4 -->
+		<div class="col-lg-3 breakers">
+			<h3 class="top-spacer-small subtract-bottom">Athlete</h3>
+			<p class="header">5 meals a day</p>
+			<hr>
+			<ul>
+				<li ng-repeat="product in products | filter: { category: 'athlete', plan: 'highcarb' }">
+					<p>{{product.days}} day plan - <b>${{product.price}}</b></p>
+				</li>
+			</ul>
+		</div><!-- /.col-lg-4 -->
+	</div><!-- /.row -->
+
+
+</div>

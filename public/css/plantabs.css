@@ -1,0 +1,276 @@
+.cd-tabs-plans {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+}
+.cd-tabs-plans:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cd-tabs-plans::after {
+    /* subtle gradient layer on top right - to indicate it's possible to scroll */
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 50px;
+    z-index: 1;
+    pointer-events: none;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+.no-cssgradients .cd-tabs-plans::after {
+    display: none;
+}
+.cd-tabs-plans.is-ended::after {
+    /* class added in jQuery - remove the gradient layer when it's no longer possible to scroll */
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-tabs-plans nav {
+    overflow: auto;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+}
+
+    .cd-tabs-plans nav {
+        position: relative;
+        text-align: center;
+        background: transparent;
+        box-shadow: none;
+    }
+
+
+.cd-tabs-navigation-plans {
+    width: 360px;
+}
+.cd-tabs-navigation-plans:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cd-tabs-navigation-plans li {
+    float: none;
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+}
+.cd-tabs-navigation-plans a {
+    position: relative;
+    margin: 5px;
+    display: block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius:10px;
+    font-size: 1.2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    color: #c3c2b9;
+    border: 2px solid #c7c7c7;
+    padding-top: 34px;
+}
+.no-touch .cd-tabs-navigation-plans a:hover {
+    color: #29324e;
+    background-color: rgba(233, 230, 202, 0.3);
+}
+.cd-tabs-navigation-plans a.selected {
+    background-color: #ffffff !important;
+    border-radius: 10px;
+    border: 2px solid #66b83d;
+    color: #66b83d;
+}
+.cd-tabs-navigation-plans a::before {
+    /* icons */
+    position: absolute;
+    top: 0px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-image: url("../img/vicons.svg");
+    background-repeat: no-repeat;
+}
+.cd-tabs-navigation-plans a[data-content='inbox']::before {
+    background-position: 0 0;
+}
+.cd-tabs-navigation-plans a[data-content='new']::before {
+    background-position: -20px 0;
+}
+.cd-tabs-navigation-plans a[data-content='gallery']::before {
+    background-position: -40px 0;
+}
+.cd-tabs-navigation-plans a[data-content='store']::before {
+    background-position: -60px 0;
+}
+.cd-tabs-navigation-plans a[data-content='settings']::before {
+    background-position: -80px 0;
+}
+.cd-tabs-navigation-plans a[data-content='trash']::before {
+    background-position: -100px 0;
+}
+.cd-tabs-navigation-plans a[data-content='inbox'].selected::before {
+    background-position: 0 -20px;
+}
+.cd-tabs-navigation-plans a[data-content='new'].selected::before {
+    background-position: -20px -20px;
+}
+.cd-tabs-navigation-plans a[data-content='gallery'].selected::before {
+    background-position: -40px -20px;
+}
+.cd-tabs-navigation-plans a[data-content='store'].selected::before {
+    background-position: -60px -20px;
+}
+.cd-tabs-navigation-plans a[data-content='settings'].selected::before {
+    background-position: -80px -20px;
+}
+.cd-tabs-navigation-plans a[data-content='trash'].selected::before {
+    background-position: -100px -20px;
+}
+
+    .cd-tabs-navigation-plans {
+        /* tabbed on top on big devices */
+        width: 96%;
+        box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+    }
+    .cd-tabs-navigation-plans a {
+        height: 70px;
+        width: auto;
+        line-height: 69px;
+        border-radius:10px;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 0 40px 0 40px;
+    }
+    .cd-tabs-navigation-plans a.selected {
+    }
+    .cd-tabs-navigation-plans a::before {
+        top: 50%;
+        margin-top: -10px;
+        margin-left: 0;
+    }
+
+.cd-tabs-content-plans {
+    background: #ffffff;
+    width: 100%;
+    margin-left: 0px;
+    border-radius:20px;
+
+}
+.cd-tabs-content-plans li {
+    display: none;
+    padding: 0em;
+}
+
+.cd-tabs-content-plans li.selected {
+    display: block;
+    -webkit-animation: cd-fade-in 0.5s;
+    -moz-animation: cd-fade-in 0.5s;
+    animation: cd-fade-in 0.5s;
+}
+.cd-tabs-content-plans li p {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #8493bf;
+    margin-bottom: 2em;
+}
+
+
+@-webkit-keyframes cd-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes cd-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes cd-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+}
+
+
+@media (min-width: 801px) and (max-width: 1023px) {
+
+}
+
+
+@media (min-width: 481px) and (max-width: 800px) {
+
+}
+
+@media (max-width: 480px) {
+
+    .cd-tabs-plans nav {
+        overflow: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+    }
+
+    .cd-tabs-navigation-plans {
+        /* tabbed on top on big devices */
+        text-align: center !important;
+        display: inline-block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+    }
+    .cd-tabs-navigation-plans a {
+        height: 40px;
+        width: auto;
+        display: inline-block;
+        line-height: 39px;
+        border-radius:10px;
+        text-align: center;
+        font-size:0.8rem;
+        padding: 0 10px 0px 10px;
+    }
+    .cd-tabs-navigation-plans a.selected {
+    }
+    .cd-tabs-navigation-plans a::before {
+        top: 50%;
+        margin-top: -10px;
+        margin-left: 0;
+    }
+
+}
+
+
+
+
